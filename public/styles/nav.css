@@ -1,0 +1,28 @@
+#nav-bar {
+    background-color: #A6A6A8;
+    height: 80px;
+    border-bottom: 2px solid #000411;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    padding: 0 20px;
+}
+
+#nav-bar span.header {
+  display: inline;
+  float: left;
+  vertical-align: top;
+  line-height: 80px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2em;
+  color: black;
+  margin: 0;
+  }
+
+#nav-bar img.logo {
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin: 5px 10px;
+}
