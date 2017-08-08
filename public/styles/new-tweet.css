@@ -1,3 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
 section.new-tweet {
   border-radius: 6px;
   padding: 8px;
@@ -25,4 +33,88 @@ font-weight: 300;
 
 .overlimit {
   color: red;
+}
+
+article.tweet {
+  background-color: #FDFFFC;
+  border-radius: 6px;
+  margin: 16px auto;
+  border: 1px solid #40434E;
+  height: 200px;
+}
+
+article.tweet header {
+  background: #A6A6A8;
+  position: relative;
+  top: 0;
+  padding: 8px 8px 0px ;
+  margin-bottom: 10px;
+  height: 60px;
+  line-height: 40px;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+article.tweet header h3 {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  float: left;
+
+}
+
+article.tweet img.usericon {
+  float: left;
+  height: 40px;
+  width: 40px;
+  margin: 0 4px;
+}
+
+
+
+article.tweet p.user-handle {
+  font-size: 16px;
+  float: right;
+  position: relative;
+  margin: 0;
+}
+
+article.tweet div.tweet-content {
+  margin: 8px;
+  height: 45%;
+  position: relative;
+}
+
+div.tweet-content span {
+  width: 100%;
+  height: 50%;
+  margin: 8% 0 0 0;
+  position: absolute;
+}
+
+article.tweet footer {
+  border-top: 1px solid #40434E;
+  padding: 4px 8px;
+  font-size: 12px;
+  height: 10%;
+}
+
+article.tweet footer span {
+  margin-top: 8px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 200;
+}
+
+
+.edit-on-hover {
+  float: right;
+  background: red;
+  width: 30%;
+  height: 20px;
+}
+.edit-on-hover a{
+  display:none;
+}
+
+.edit-on-hover:hover a {
+  display:block;
 }
