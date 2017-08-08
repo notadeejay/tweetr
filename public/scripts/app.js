@@ -39,12 +39,17 @@ var data = [
       "handle": "@johann49"
     },
     "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
+      "text": "<script>alert('uh oh!');</script>"
     },
     "created_at": 1461113796368
   }
 ];
 
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 
 const generateHTML = (obj) => {
@@ -57,7 +62,7 @@ const generateHTML = (obj) => {
       </header>
 
       <div class="tweet-content">
-        <span>${obj.content.text}</span>
+        <span>${escape(obj.content.text)}</span>
       </div>
 
       <footer>
