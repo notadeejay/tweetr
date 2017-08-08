@@ -104,10 +104,14 @@ article.tweet footer span {
   font-weight: 200;
 }
 
+.edit-on-hover img.hover-icon {
+  height: 18px;
+  width: 18spx;
+  margin: 4px;
+}
 
 .edit-on-hover {
   float: right;
-  background: red;
   width: 30%;
   height: 20px;
 }
@@ -115,6 +119,7 @@ article.tweet footer span {
   display:none;
 }
 
-.edit-on-hover:hover a {
-  display:block;
+article.tweet:hover .edit-on-hover a {
+  display:inline-block;
+  float: right;
 }
