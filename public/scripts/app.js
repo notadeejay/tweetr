@@ -34,6 +34,19 @@ const generateHTML = (obj) => {
 //DOM READY
 $(function() {
 
+//TOGGLE COMPOSE NEW TWEET & AUTO FOCUS
+$('.compose').click(function(){
+   $('.new-tweet').slideDown()
+    $('textarea').focus();
+});
+
+//ALLOW USER TO SUBMIT BY PRESSING ENTER
+$("textarea.tweetinput").keydown(function(event){
+    if(event.keyCode == 13){
+        $("#tweet-submit").click();
+    }
+});
+
 //RENDER THE CORRECT HTML FOR TWEETS
 const renderTweets = (data) => {
   var html = data
@@ -86,6 +99,7 @@ $("#tweetform").submit(function(event) {
 
 });
 
+ loadTweets();
 });
 
 

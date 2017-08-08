@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $("textarea.tweetinput").keyup(function () {
+  $("textarea.tweetinput").on('input', function (e) {
     var max = 140;
     var length = $(this).val().length;
     var remaining = max - length;
@@ -13,4 +13,5 @@ $(document).ready(function(){
       $(counterElement).removeClass("overlimit");
     }
   });
+
 });
