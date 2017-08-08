@@ -35,7 +35,7 @@ font-weight: 300;
   color: red;
 }
 
-article.tweet {
+#tweets-container article {
   background-color: #FDFFFC;
   border-radius: 6px;
   margin: 16px auto;
@@ -43,7 +43,7 @@ article.tweet {
   height: 200px;
 }
 
-article.tweet header {
+#tweets-container article header {
   background: #A6A6A8;
   position: relative;
   top: 0;
@@ -55,14 +55,14 @@ article.tweet header {
   border-top-left-radius: 6px;
 }
 
-article.tweet header h3 {
+ span.username {
   margin: 0;
   font-family: 'Oswald', sans-serif;
   float: left;
 
 }
 
-article.tweet img.usericon {
+#tweets-container article img.usericon {
   float: left;
   height: 40px;
   width: 40px;
@@ -71,14 +71,14 @@ article.tweet img.usericon {
 
 
 
-article.tweet p.user-handle {
+span.user-handle {
   font-size: 16px;
   float: right;
   position: relative;
   margin: 0;
 }
 
-article.tweet div.tweet-content {
+#tweets-container article div.tweet-content {
   margin: 8px;
   height: 45%;
   position: relative;
@@ -91,14 +91,14 @@ div.tweet-content span {
   position: absolute;
 }
 
-article.tweet footer {
+#tweets-container article footer {
   border-top: 1px solid #40434E;
   padding: 4px 8px;
   font-size: 12px;
   height: 10%;
 }
 
-article.tweet footer span {
+footer span.date {
   margin-top: 8px;
   font-family: 'Oswald', sans-serif;
   font-weight: 200;
@@ -106,7 +106,7 @@ article.tweet footer span {
 
 .edit-on-hover img.hover-icon {
   height: 18px;
-  width: 18spx;
+  width: 18px;
   margin: 4px;
 }
 
@@ -119,7 +119,7 @@ article.tweet footer span {
   display:none;
 }
 
-article.tweet:hover .edit-on-hover a {
+#tweets-container article:hover .edit-on-hover a {
   display:inline-block;
   float: right;
 }

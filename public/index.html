@@ -17,10 +17,12 @@
     <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
    <!-- Nav Bar CSS -->
     <link rel="stylesheet" href="./styles/nav.css" type="text/css" />
-    <!-- External JS -->
-    <script type="text/javascript" src="./vendor/jquery-2.2.3.min.js"></script>
 
+   <!-- External JS -->
+    <script type="text/javascript" src="./vendor/jquery-2.2.3.min.js"></script>
     <!-- App JS -->
+
+    <script type="text/javascript" src="./scripts/getdate.js"></script>
     <script type="text/javascript" src="./scripts/app.js"></script>
 
     <script type="text/javascript" src="./scripts/charcount.js"></script>
@@ -45,28 +47,11 @@
           <span class="counter">140</span>
       </form>
      </section>
-     <section class="tweet-list">
-      <article class="tweet">
-        <header>
-        <img class="usericon" src="./images/man.png">
-           <h3>Notadeejay</h3>
-           <p class="user-handle">@notadeejay</p>
-        </header>
-        <div class="tweet-content">
-        <span>Little tweet here</span>
-        </div>
-        <footer>
-          <span>10 days ago<span>
-          <div class="edit-on-hover">
-            <a href="#"><img class="hover-icon" src ="./images/flag.png"></a>
-            <a href="#"><img class="hover-icon" src ="./images/retweet.png"></a>
-            <a href="#"><img class="hover-icon" src ="./images/like.png"></a>
+      <div id="tweets-container">
 
-          </div>
-        </footer>
-      </article>
-     </section>
+      <!-- NEW TWEETS WILL BE RENDERED HERE -->
+
+      </div>
   </main>
-
   </body>
 </html>
