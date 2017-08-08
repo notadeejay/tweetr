@@ -44,7 +44,7 @@ const renderTweets = (data) => {
  }
 
 
-//LOAD TWEETS ON PAGE LOAD
+//LOAD DEM TWEETS ON PAGE LOAD
 const loadTweets = () => {
   $.ajax({
           url:'http://localhost:8080/tweets',
@@ -57,18 +57,34 @@ const loadTweets = () => {
 //DAT FORM SUBMIT
 $("#tweetform").submit(function(event) {
   event.preventDefault();
-  var data = $(this).serialize();
+  var tweetLength = $('.tweetinput').val().length
 
-   $.ajax({
+  if (!tweetLength) {
+    alert('You cannot send an empty tweet 🙅‍')
+    return
+  }
+
+  if (tweetLength > 140) {
+    alert('Your tweet is more than 140 characters 🚫')
+    return
+  }
+
+  //VALIDATING TWEET LENGTH
+  var data = $(this).serialize();
+      $.ajax({
         url: 'http://localhost:8080/tweets',
         method: 'POST',
         data: data
       }).then(function() {
-        $('.tweetinput').val('');
-            loadTweets();
-            $('.counter').text('140');
-      });
-  });
+      //CLEAR THE INPUT
+      $('.tweetinput').val('');
+      //LOAD THE TWEETS
+      loadTweets();
+     //RESET THE COUNTER
+      $('.counter').text('140');
+    });
+
+});
 
 });
 
