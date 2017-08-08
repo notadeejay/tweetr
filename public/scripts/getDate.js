@@ -19,10 +19,8 @@ function convertDate(obj) {
     timeSince =  hours + ' hours ago';
   } else if (minutes > 1) {
     timeSince =  minutes + ' minutes ago';
-  } else if (seconds < 5) {
-    timeSince = 'Just now';
   } else {
-   timeSince =  Math.floor(seconds) + ' seconds ago';
+    timeSince = 'Just now';
   }
 
   obj = {
