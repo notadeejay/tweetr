@@ -7,7 +7,6 @@ html {
 
 
 section.new-tweet {
-/*  border-radius: 6px;*/
   padding: 8px;
   background-color: #CAD178;
   border: 1px solid #40434E;
@@ -27,6 +26,7 @@ margin: 10px auto;
 padding: 5px;
 font-family: 'Old Standard TT', serif;
 }
+
 
 .new-tweet .counter {
 float: right;
@@ -55,8 +55,6 @@ font-weight: 300;
   margin-bottom: 10px;
   height: 60px;
   line-height: 40px;
-  /*border-top-right-radius: 6px;
-  border-top-left-radius: 6px;*/
 }
 
  span.username {
@@ -89,10 +87,11 @@ span.user-handle {
   position: relative;
 }
 
-div.tweet-content span {
-  width: 100%;
-  height: 50%;
-  margin: 8% 0 0 0;
+.break-word {
+  overflow-wrap: break-word;
+  width: 90%;
+  height: 40%;
+  margin: 1%;
   position: absolute;
   font-family: 'Old Standard TT', serif;
 }

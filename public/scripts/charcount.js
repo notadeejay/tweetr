@@ -1,9 +1,9 @@
 $(document).ready(function(){
   $("textarea.tweetinput").on('input', function (e) {
-    var max = 140;
-    var length = $(this).val().length;
-    var remaining = max - length;
-    var counterElement = $(this).siblings(".counter")
+    let max = 140;
+    let length = $(this).val().length;
+    let remaining = max - length;
+    let counterElement = $(this).siblings(".counter")
 
     counterElement.html(remaining);
 

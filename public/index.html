@@ -1,59 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="./vendor/normalize-4.1.1.css" type="text/css" />
-
-    <!-- Google Web Font -->
-   <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Oswald:200,400,700" rel="stylesheet">
-
-    <!-- App CSS -->
-    <link rel="stylesheet" href="./styles/layout.css" type="text/css" />
-
-  <!--   New Tweet CSS -->
-    <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
-   <!-- Nav Bar CSS -->
-    <link rel="stylesheet" href="./styles/nav.css" type="text/css" />
-
-   <!-- External JS -->
-    <script type="text/javascript" src="./vendor/jquery-2.2.3.min.js"></script>
-    <!-- App JS -->
-
-    <script type="text/javascript" src="./scripts/getdate.js"></script>
-
-    <script type="text/javascript" src="./scripts/app.js"></script>
-
-    <script type="text/javascript" src="./scripts/charcount.js"></script>
+      <!-- Meta Information -->
+      <title>Tweeter - Home Page</title>
+      <!-- External CSS -->
+      <link rel="stylesheet" href="./vendor/normalize-4.1.1.css" type="text/css" />
+      <!-- Google Web Font -->
+     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Oswald:200,400,700" rel="stylesheet">
+      <!-- App CSS -->
+      <link rel="stylesheet" href="./styles/layout.css" type="text/css" />
+     <!-- Tweets CSS -->
+      <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css" />
+     <!-- Nav Bar CSS -->
+      <link rel="stylesheet" href="./styles/nav.css" type="text/css" />
+     <!-- External JS -->
+      <script type="text/javascript" src="./vendor/jquery-2.2.3.min.js"></script>
+     <!-- Date Calculator -->
+      <script type="text/javascript" src="./scripts/getdate.js"></script>
+     <!-- App JS -->
+      <script type="text/javascript" src="./scripts/app.js"></script>
+     <!-- Character Counter -->
+      <script type="text/javascript" src="./scripts/charcount.js"></script>
 
   </head>
 
-  <body>
+ <body>
 
-    <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar">
-      <img class="logo" src="./images/birdie.png">
-      <span class="header">TWEETER</span>
-      <button class="grow"><img class="edit-icon"src="./images/edit.png"></span>COMPOSE</button>
-    </nav>
+    <!-- NAV BAR -->
+  <nav id="nav-bar">
+    <img class="logo" src="./images/birdie.png"> <span class=
+    "header">TWEETER</span> <button class="grow"><img class="edit-icon" src=
+    "./images/edit.png">COMPOSE</button>
+  </nav>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>COMPOSE TWEET</h2>
-        <form id = "tweetform" action="/tweets" method="POST" >
-          <textarea class="tweetinput" name="text" placeholder="What are you humming about?"></textarea>
-          <input id="tweet-submit"type="submit" value="Tweet">
-          <span class="counter">140</span>
+  <!-- MAIN CONTAINER -->
+  <main class="container">
+    <section class="new-tweet">
+      <h2>COMPOSE TWEET</h2>
+      <form action="/tweets" id="tweetform" method="post" name="tweetform">
+        <textarea class="tweetinput" name="text" placeholder=
+        "What are you humming about?"></textarea> <input id="tweet-submit"
+        type="submit" value="Tweet"> <span class="counter">140</span>
       </form>
-     </section>
-      <div id="tweets-container">
+    </section>
+    <div id="tweets-container">
 
       <!-- NEW TWEETS WILL BE RENDERED HERE -->
 
-      </div>
+    </div>
   </main>
-  </body>
+</body>
 </html>
