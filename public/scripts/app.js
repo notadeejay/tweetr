@@ -1,3 +1,4 @@
+
 function escape(str) {
   var div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -35,7 +36,7 @@ const generateHTML = (obj) => {
 $(function() {
 
 //TOGGLE COMPOSE NEW TWEET & AUTO FOCUS
-$('.compose').click(function(){
+$('.grow').click(function(){
    $('.new-tweet').slideDown()
     $('textarea').focus();
 });
