@@ -83,6 +83,7 @@ span.user-handle {
 
 #tweets-container article div.tweet-content {
   margin: 8px;
+  padding: 8px;
   height: 45%;
   position: relative;
 }
@@ -91,7 +92,7 @@ span.user-handle {
   overflow-wrap: break-word;
   width: 90%;
   height: 40%;
-  margin: 1%;
+  margin: 4px;
   position: absolute;
   font-family: 'Old Standard TT', serif;
 }
