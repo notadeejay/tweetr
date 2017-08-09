@@ -1,6 +1,6 @@
 # Tweeter
 
-##Project Description
+## Project Description
 Tweeter is a simple, single-page Twitter clone built using HTML, CSS, JS, jQuery, AJAX, Node, Express and MongoDB.
 
 ## Final Product
@@ -14,7 +14,7 @@ Tweeter is a simple, single-page Twitter clone built using HTML, CSS, JS, jQuery
  - _Express_
  - _Mongodb_
 
-##Getting started
+## Getting started
 
 **Install add dependencies using npm install**
 
