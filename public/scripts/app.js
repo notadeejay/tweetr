@@ -1,11 +1,13 @@
 
+
+//STAYIN' SAFE FROM XXS
 function escape(str) {
   var div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
 
-
+//GENERATES THE HTML FOR EACH NEW TWEET
 const generateHTML = (obj) => {
   const html = `
   <article>
@@ -22,9 +24,9 @@ const generateHTML = (obj) => {
       <footer>
         <span class="date">${convertDate(obj).created_at}<span>
         <span class="edit-on-hover" role="img-icon">
-          <a href="#"><img class="hover-icon" src ="./images/flag.png"></a>
-          <a href="#"><img class="hover-icon" src ="./images/retweet.png"></a>
-          <a href="#"><img class="hover-icon" src ="./images/like.png"></a>
+          <a href="https://media.giphy.com/media/khxE0kBiwIZa0/giphy.gif"><img class="hover-icon" src ="./images/flag.png"></a>
+          <a href="https://media.giphy.com/media/26BRGxVMNyKXJDYOY/giphy.gif"><img class="hover-icon" src ="./images/retweet.png"></a>
+          <a href="https://media.giphy.com/media/P8MxmGnjmytws/giphy.gif"><img class="hover-icon" src ="./images/like.png"></a>
         </span>
       </footer>
     </article>
@@ -58,7 +60,7 @@ const renderTweets = (data) => {
  }
 
 
-//LOAD DEM TWEETS ON PAGE LOAD
+//LOAD DEM TWEETS
 const loadTweets = () => {
   $.ajax({
           url:'http://localhost:8080/tweets',
@@ -82,7 +84,6 @@ $("#tweetform").submit(function(event) {
     alert('Your tweet is more than 140 characters 🚫')
     return
   }
-
   //VALIDATING TWEET LENGTH
   var data = $(this).serialize();
       $.ajax({
