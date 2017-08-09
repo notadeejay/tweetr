@@ -11,6 +11,7 @@ section.new-tweet {
   padding: 8px;
   background-color: #CAD178;
   border: 1px solid #40434E;
+  display: none;
 }
 
 section.new-tweet h2 {
@@ -23,6 +24,7 @@ section.new-tweet h2 {
 width: 100%;
 margin: 10px auto;
 padding: 5px;
+font-family: 'Old Standard TT', serif;
 }
 
 .new-tweet .counter {
@@ -38,9 +40,10 @@ font-weight: 300;
 #tweets-container article {
   background-color: #FDFFFC;
   border-radius: 6px;
-  margin: 16px auto;
+  margin: 8px auto;
   border: 1px solid #40434E;
   height: 200px;
+  opacity: 0.7;
 }
 
 #tweets-container article header {
@@ -76,6 +79,7 @@ span.user-handle {
   float: right;
   position: relative;
   margin: 0;
+  font-family: 'Old Standard TT', serif;
 }
 
 #tweets-container article div.tweet-content {
@@ -89,6 +93,7 @@ div.tweet-content span {
   height: 50%;
   margin: 8% 0 0 0;
   position: absolute;
+  font-family: 'Old Standard TT', serif;
 }
 
 #tweets-container article footer {
@@ -119,6 +124,9 @@ footer span.date {
   display:none;
 }
 
+#tweets-container article:hover {
+  opacity: 1;
+}
 #tweets-container article:hover .edit-on-hover a {
   display:inline-block;
   float: right;
