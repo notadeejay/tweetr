@@ -68,6 +68,11 @@ main.container {
     float: right;
   }
 
+  #tweets-container article:hover .likes {
+    display: inline-block;
+    float: right;
+  }
+
   article .edit-on-hover img.hover-icon {
     height: 18px;
     width: 18px;
@@ -83,6 +88,12 @@ main.container {
   article .edit-on-hover a {
     display: none;
   }
+  article .edit-on-hover .likes {
+    display: none;
+    margin: 2px;
+  }
+
+
 
   #tweets-container article header {
     padding: 8px 8px 0px;
@@ -217,4 +228,7 @@ button.grow:hover {
       height: 20px;
 }
 
+.selected {
+  background-color: red;
+}
 /*# sourceMappingURL=styles.css.map */

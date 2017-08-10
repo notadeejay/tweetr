@@ -45,7 +45,7 @@ module.exports = function(DataHelpers) {
 
 
   tweetsRoutes.post("/:id", function (req, res){
-    DataHelpers.updateTweets(req.params.id, (err) => {
+    DataHelpers.likeTweets(req.params.id, (err) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {

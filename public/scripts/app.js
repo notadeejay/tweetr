@@ -24,6 +24,7 @@ const generateHTML = (obj) => {
         <span class="edit-on-hover" id="#icons" role="img-icon">
           <a href="#"><img class="hover-icon" src ="./images/flag.png"></a>
           <a href="#"><img class="hover-icon" src ="./images/retweet.png"></a>
+          <span class = "likes">${obj.likes}</span>
           <a href ="#" class="heart" data-tweetid="${obj._id}">
             <img class="hover-icon" src ="./images/like.png">
           </a>
@@ -112,19 +113,17 @@ $("#tweetform").submit(function(event) {
  loadTweets();
 
 
-  //AJAX REQUEST to handle the like click
-
-
+//AJAX REQUEST to handle the like click
 $(document).on('click', '.heart', function (event) {
   event.preventDefault();
   var tweetid = $(this).data('tweetid')
-  $.ajax({
-    url: `http://localhost:8080/tweets/${tweetid}`,
-    method: 'POST'
-  });
+      $.ajax({
+        url: `http://localhost:8080/tweets/${tweetid}`,
+        method: 'POST'
+      }).then(function (response) {
+                loadTweets();
+          });
 });
-
-
 
 
 

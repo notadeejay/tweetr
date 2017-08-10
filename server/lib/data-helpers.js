@@ -21,24 +21,30 @@ module.exports = function makeDataHelpers(db) {
       });
     },
 
-    updateTweets: function (id, callback) {
-      // TODO
-      // console.log(tweet object found by id);
-      let objId = new ObjectId(id);
-      let obj = db.collection("tweets").find({"_id": objId});
-      obj.toArray((err, tweet) => {
-        if (err) {
-          console.log(err)
-        } else {
-          console.log(tweet)
-          console.log(tweet[0]._id)
 
-          db.collection("tweets").update({"_id": tweet[0]._id},{$inc: {"likes": 1}});
-          callback(null, true)
-        }
-      });
+  likeTweets: function(id, callback) {
+      try {
+        const _id = new ObjectId(id);
+        db
+          .collection("tweets")
+          .update({"_id": _id}, {"$inc": {"likes" : 1}})
+          .then(res => callback(null));
+      } catch(error) {
+        callback(error);
+      }
+    },
 
-    }
+  // unlikeTweets: function(id, callback) {
+  //     try {
+  //       const _id = new ObjectId(id);
+  //       db
+  //         .collection("tweets")
+  //         .update({"_id": _id}, {"$inc": {"likes" : -1}})
+  //         .then(res => callback(null));
+  //     } catch(error) {
+  //       callback(error);
+  //     }
+  //   }
 
   };
 }
