@@ -1,0 +1,245 @@
+$primaryColor: #A6A6A8;
+$highlightColor: #CAD178;
+$lowlightColor: #40434E;
+$backgroundColor: #FDFFFC;
+$mainFont: 'Oswald', sans-serif;
+$secondaryFont: 'Old Standard TT', serif;
+$containerWidth: 450px;
+$font-light: 200;
+
+@mixin pad ($pads...) {
+  padding: $pads;
+}
+
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+body {
+  margin: 0;
+  color: #000;
+  background-image: url(/images/geometry.png);
+  font-family: $mainFont;
+}
+
+main.container {
+  width: $containerWidth;
+  margin: 140px auto;
+  background-color: $backgroundColor;
+  @include pad(8px);
+}
+
+.new-tweet {
+      @include pad(8px);
+      background-color: $highlightColor;
+      border: 1px solid $lowlightColor;
+      display: none;
+
+      h2 {
+      border-bottom: 1px solid black;
+      margin: 2px;
+      color: #000;
+      font-weight: 400;
+      }
+
+      textarea {
+      width: 100%;
+      margin: 10px auto;
+      padding: 5px;
+      font-family: $secondaryFont;
+      }
+
+      .counter {
+      float: right;
+      font-style: italic;
+      font-weight: 300;
+     }
+}
+
+.overlimit {
+  color: red;
+}
+
+
+#tweets-container {
+      article {
+        background-color: $backgroundColor;
+        margin: 16px auto;
+        border: 1px solid $primaryColor;
+        height: 200px;
+        opacity: 0.7;
+
+         :hover {
+            opacity: 1;
+            box-shadow: 5px 5px #40434E;
+            }
+
+          :hover a {
+              display:inline-block;
+              float: right;
+            }
+
+          header {
+            @include pad(8px 8px 0px);
+            background: $primaryColor;
+            position: relative;
+            top: 0;
+            margin-bottom: 10px;
+            height: 60px;
+            line-height: 40px;
+            }
+
+          .username {
+            margin: 0;
+            font-family: $mainFont;
+            float: left;
+          }
+
+          .usericon {
+            float: left;
+            height: 40px;
+            width: 40px;
+            margin: 0 4px;
+          }
+
+          .user-handle {
+            font-size: 16px;
+            float: right;
+            position: relative;
+            margin: 0;
+            font-family: $secondaryFont;
+          }
+
+          .tweet-content {
+            @include pad(8px);
+            margin: 8px;
+            height: 45%;
+            position: relative;
+          }
+
+          .break-word {
+            overflow-wrap: break-word;
+            width: 90%;
+            height: 40%;
+            margin: 4px;
+            position: absolute;
+            font-family: $secondaryFont;
+          }
+
+          footer {
+            @include pad(4px 8px);
+            border-top: 1px solid $lowlightColor;
+            font-size: 12px;
+            height: (200px/10px);
+          }
+
+          .date {
+            margin-top: 8px;
+            font-family: $mainFont;
+            font-weight: $font-light;
+          }
+
+          .hover-icon {
+              height: 18px;
+              width: 18px;
+              margin: 4px;
+            }
+
+          .edit-on-hover {
+              float: right;
+              width: 30%;
+              height: 20px;
+           }
+
+          .edit-on-hover a{
+             display:none;
+          }
+      }
+}
+
+#nav-bar {
+    background-color: $primaryColor;
+    height: 80px;
+    border-bottom: 2px solid #000411;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    @include pad(0 20px);
+
+    .header {
+      display: inline;
+      float: left;
+      vertical-align: top;
+      line-height: 80px;
+      font-family: $mainFont;
+      font-size: 2em;
+      color: black;
+      margin: 0;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      float: left;
+      margin: 5px 10px;
+    }
+
+    button {
+      float: right;
+      height: 40px;
+      width: 100px;
+      margin: 16px;
+      background-color: $highlightColor;
+      border: 1px solid $lowlightColor;
+      font-family: $mainFont;
+      font-weight: $font-light;
+      padding: 4px;
+        :hover {
+          opacity: .6;
+        }
+        .grow {
+          -webkit-transition:all 0.5s ease-out;
+          -moz-transition:all 0.5s ease-out;
+          -ms-transition:all 0.5s ease-out;
+          -o-transition:all 0.5s ease-out;
+          transition:all 0.5s ease-out;
+        }
+
+        .grow:hover {
+          -webkit-transform:scale(1.1);
+          -moz-transform:scale(1.1);
+          -ms-transform:scale(1.1);
+          -o-transform:scale(1.1);
+          transform:scale(1.1);
+        }
+
+        .edit-icon {
+          margin: 3px;
+          float: left;
+          width: 20px;
+          height: 20px;
+       }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
