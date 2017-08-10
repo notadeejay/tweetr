@@ -32,19 +32,7 @@ module.exports = function makeDataHelpers(db) {
       } catch(error) {
         callback(error);
       }
-    },
-
-  // unlikeTweets: function(id, callback) {
-  //     try {
-  //       const _id = new ObjectId(id);
-  //       db
-  //         .collection("tweets")
-  //         .update({"_id": _id}, {"$inc": {"likes" : -1}})
-  //         .then(res => callback(null));
-  //     } catch(error) {
-  //       callback(error);
-  //     }
-  //   }
+    }
 
   };
 }
