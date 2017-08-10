@@ -21,19 +21,22 @@ const generateHTML = (obj) => {
 
       <footer>
         <span class="date">${convertDate(obj).created_at}<span>
-        <span class="edit-on-hover" role="img-icon">
+        <span class="edit-on-hover" id="#icons" role="img-icon">
           <a href="#"><img class="hover-icon" src ="./images/flag.png"></a>
           <a href="#"><img class="hover-icon" src ="./images/retweet.png"></a>
-          <a href=""><img class="hover-icon" src ="./images/like.png"></a>
+          <a href ="#" class="heart" data-tweetid="${obj._id}">
+            <img class="hover-icon" src ="./images/like.png">
+          </a>
         </span>
       </footer>
     </article>
     `
-  return html
+  return html;
 }
 
 //DOM READY
 $(function() {
+
 
 //TOGGLE COMPOSE NEW TWEET & AUTO FOCUS
 $('.grow').click(function(){
@@ -48,6 +51,8 @@ $("textarea.tweetinput").keydown(function(event){
         $("#tweet-submit").click();
     }
 });
+
+
 
 
 //RENDER THE CORRECT HTML FOR TWEETS
@@ -70,7 +75,6 @@ const loadTweets = () => {
             renderTweets(response);
       });
   }
-
 
 //DAT FORM SUBMIT
 $("#tweetform").submit(function(event) {
@@ -107,7 +111,26 @@ $("#tweetform").submit(function(event) {
 //LOAD TWEETS ON DOM READY
  loadTweets();
 
+
+  //AJAX REQUEST to handle the like click
+
+
+$(document).on('click', '.heart', function (event) {
+  event.preventDefault();
+  var tweetid = $(this).data('tweetid')
+  $.ajax({
+    url: `http://localhost:8080/tweets/${tweetid}`,
+    method: 'POST'
+  });
 });
+
+
+
+
+
+
+});
+
 
 
 
