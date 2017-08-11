@@ -125,7 +125,7 @@ $("#tweetform").submit(function(event) {
           url: `/tweets/${tweetid}/like`,
           method: 'POST'
         }).then(function (response) {
-          $this.siblings('.likes').text(response.value.likes)
+          $this.siblings('.likes').text(response.value.likes + 1)
           $this.siblings('.likes').toggleClass('selected')
         });
     } else {
@@ -133,7 +133,7 @@ $("#tweetform").submit(function(event) {
         url: `/tweets/${tweetid}/unlike`,
         method: 'POST'
       }).then(function (response) {
-        $this.siblings('.likes').text(response.value.likes)
+        $this.siblings('.likes').text(response.value.likes - 1)
         $this.siblings('.likes').toggleClass('selected')
       });
     }
