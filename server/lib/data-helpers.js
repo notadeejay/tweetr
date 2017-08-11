@@ -22,17 +22,19 @@ module.exports = function makeDataHelpers(db) {
     },
 
 
-  likeTweets: function(id, callback) {
+  likeTweets: function(id, increment, callback) {
       try {
+        let amount = increment ? 1 : -1;
         const _id = new ObjectId(id);
         db
           .collection("tweets")
-          .update({"_id": _id}, {"$inc": {"likes" : 1}})
-          .then(res => callback(null));
+          .findOneAndUpdate({"_id": _id}, {"$inc": {"likes" : amount}}, {returnNew: true}, function(err, tweet) {
+           callback(err, tweet)
+          });
       } catch(error) {
         callback(error);
       }
-    }
+    },
 
   };
 }

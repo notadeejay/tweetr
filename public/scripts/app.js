@@ -25,7 +25,7 @@ const generateHTML = (obj) => {
           <a href="#"><img class="hover-icon" src ="./images/flag.png"></a>
           <a href="#"><img class="hover-icon" src ="./images/retweet.png"></a>
           <span class = "likes">${obj.likes}</span>
-          <a href ="#" class="heart" data-tweetid="${obj._id}">
+              <a href ="#" class="heart" data-tweetid="${obj._id}">
             <img class="hover-icon" src ="./images/like.png">
           </a>
         </span>
@@ -114,18 +114,30 @@ $("#tweetform").submit(function(event) {
 
 
 //AJAX REQUEST to handle the like click
-$(document).on('click', '.heart', function (event) {
-  event.preventDefault();
-  var tweetid = $(this).data('tweetid')
+  $(document).on('click', '.heart', function (event) {
+    event.preventDefault();
+    var $this = $(this)
+    var tweetid = $(this).data('tweetid')
+    var classCheck = $this.siblings('.likes').hasClass('selected')
+
+    if (!classCheck) {
+        $.ajax({
+          url: `/tweets/${tweetid}/like`,
+          method: 'POST'
+        }).then(function (response) {
+          $this.siblings('.likes').text(response.value.likes)
+          $this.siblings('.likes').toggleClass('selected')
+        });
+    } else {
       $.ajax({
-        url: `http://localhost:8080/tweets/${tweetid}`,
+        url: `/tweets/${tweetid}/unlike`,
         method: 'POST'
       }).then(function (response) {
-                loadTweets();
-          });
-});
-
-
+        $this.siblings('.likes').text(response.value.likes)
+        $this.siblings('.likes').toggleClass('selected')
+      });
+    }
+  });
 
 
 });

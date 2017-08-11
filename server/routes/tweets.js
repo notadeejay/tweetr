@@ -44,12 +44,22 @@ module.exports = function(DataHelpers) {
   });
 
 
-  tweetsRoutes.post("/:id", function (req, res){
-    DataHelpers.likeTweets(req.params.id, (err) => {
+  tweetsRoutes.post("/:id/like", function (req, res){
+    DataHelpers.likeTweets(req.params.id, true, (err, tweet) => {
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
-        res.status(201).send();
+        res.json(tweet);
+      }
+    })
+  });
+
+  tweetsRoutes.post("/:id/unlike", function (req, res){
+    DataHelpers.likeTweets(req.params.id, false, (err, tweet) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        res.json(tweet);
       }
     })
   });
