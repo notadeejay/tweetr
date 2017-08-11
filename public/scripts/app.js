@@ -40,74 +40,74 @@ $(function() {
 
 
 //TOGGLE COMPOSE NEW TWEET & AUTO FOCUS
-$('.grow').click(function(){
-   $('.new-tweet').slideToggle()
-    $('textarea').focus();
-});
+  $('.grow').click(function(){
+     $('.new-tweet').slideToggle()
+      $('textarea').focus();
+  });
 
 
 //ALLOW USER TO SUBMIT BY PRESSING ENTER
-$("textarea.tweetinput").keydown(function(event){
-    if(event.keyCode == 13){
-        $("#tweet-submit").click();
-    }
-});
+  $("textarea.tweetinput").keydown(function(event){
+      if(event.keyCode == 13){
+          $("#tweet-submit").click();
+      }
+  });
 
 
 
 
 //RENDER THE CORRECT HTML FOR TWEETS
-const renderTweets = (data) => {
-  let html = data
-            .sort((a,b) => b.created_at - a.created_at)
-            .map(generateHTML)
-            .join('')
-  $('#tweets-container').html(html)
- }
+  const renderTweets = (data) => {
+    let html = data
+              .sort((a,b) => b.created_at - a.created_at)
+              .map(generateHTML)
+              .join('')
+    $('#tweets-container').html(html)
+   }
 
 
 
 //LOAD DEM TWEETS
-const loadTweets = () => {
-  $.ajax({
-          url:'http://localhost:8080/tweets',
-          method: 'GET'
-         }).then(function (response) {
-            renderTweets(response);
-      });
-  }
+  const loadTweets = () => {
+    $.ajax({
+            url:'http://localhost:8080/tweets',
+            method: 'GET'
+           }).then(function (response) {
+              renderTweets(response);
+        });
+    }
 
 //DAT FORM SUBMIT
-$("#tweetform").submit(function(event) {
-  event.preventDefault();
-  let tweetLength = $('.tweetinput').val().length
+  $("#tweetform").submit(function(event) {
+    event.preventDefault();
+    let tweetLength = $('.tweetinput').val().length
 
-  if (!tweetLength) {
-    alert('You cannot send an empty tweet 🙅‍')
-    return
-  }
+    if (!tweetLength) {
+      alert('You cannot send an empty tweet 🙅‍')
+      return
+    }
 
-  if (tweetLength > 140) {
-    alert('Your tweet is more than 140 characters 🚫')
-    return
-  }
+    if (tweetLength > 140) {
+      alert('Your tweet is more than 140 characters 🚫')
+      return
+    }
 
   //VALIDATING TWEET LENGTH
-  let data = $(this).serialize();
-      $.ajax({
-        url: 'http://localhost:8080/tweets',
-        method: 'POST',
-        data: data
-      }).then(function() {
-      //CLEAR THE INPUT
-      $('.tweetinput').val('');
-      //LOAD THE TWEETS
-      loadTweets();
-     //RESET THE COUNTER
-      $('.counter').text('140');
-    });
+    let data = $(this).serialize();
+        $.ajax({
+          url: 'http://localhost:8080/tweets',
+          method: 'POST',
+          data: data
+        }).then(function() {
+        //CLEAR THE INPUT
+        $('.tweetinput').val('');
+        //LOAD THE TWEETS
+        loadTweets();
+       //RESET THE COUNTER
+        $('.counter').text('140');
+      });
 
-});
+  });
 
 //LOAD TWEETS ON DOM READY
  loadTweets();
