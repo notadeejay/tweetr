@@ -1,8 +1,35 @@
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-size: 20px;
+}
 
 *, *:before, *:after {
   box-sizing: inherit; }
+
+
+
+
+@media (max-width: 900px) {
+  html { font-size: 15px; }
+  main.container {width: 40%;}
+
+}
+
+@media (max-width: 600px) {
+  html { font-size: 13px; }
+  main.container {width: 30%;}
+  footer {display: none;}
+  .user-handle{display:none;}
+}
+
+
+@media (max-width: 400px) {
+  html { font-size: 13px; }
+  main.container {width: 20%;}
+  footer {display: none;}
+  .user-handle{display:none;}
+}
+
 
 body {
   margin: 0;
@@ -12,16 +39,20 @@ body {
 
 /*COMPOSE TWEETS*/
 main.container {
-  width: 450px;
+  width: 40%;
   margin: 140px auto;
   background-color: #FDFFFC;
-  padding: 16px; }
+  padding: 16px;
+}
 
 .new-tweet {
   padding: 8px;
   background-color: #CAD178;
   border: 1px solid #40434E;
   display: none;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
   .new-tweet h2 {
@@ -36,12 +67,18 @@ main.container {
     margin: 10px auto;
     padding: 5px;
     font-family: "Old Standard TT", serif;
+    font-size: .8em
  }
 
   .new-tweet .counter {
     float: right;
     font-style: italic;
     font-weight: 300;
+    font-size: 0.8em;
+   }
+
+   #tweet-submit {
+    font-size: .75em;
    }
 
 .overlimit {
@@ -54,8 +91,11 @@ main.container {
   background-color: #FDFFFC;
   margin: 16px auto;
   border: 1px solid #A6A6A8;
-  height: 200px;
   opacity: 0.7;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  flex-shrink: 1;
 }
 
   #tweets-container article:hover {
@@ -77,6 +117,7 @@ main.container {
     height: 18px;
     width: 18px;
     margin: 4px;
+    flex-shrink: 1;
   }
 
   article .edit-on-hover {
@@ -93,7 +134,9 @@ main.container {
     margin: 2px;
   }
 
-
+ #tweets-container {
+  font-size: 1rem;
+ }
 
   #tweets-container article header {
     padding: 8px 8px 0px;
@@ -101,29 +144,35 @@ main.container {
     position: relative;
     top: 0;
     margin-bottom: 10px;
+    line-height: 2.5;
+    flex-shrink: 1;
     height: 60px;
-    line-height: 40px;
   }
 
   #tweets-container article .username {
     margin: 0;
     font-family: "Oswald", sans-serif;
     float: left;
+    font-size: .9em;
+    flex-shrink: 1;
   }
 
   #tweets-container article .usericon {
     float: left;
+    margin: 0 4px;
+    flex-shrink: 1;
     height: 40px;
     width: 40px;
-    margin: 0 4px;
   }
 
   #tweets-container article .user-handle {
-    font-size: 16px;
     float: right;
     position: relative;
     margin: 0;
     font-family: "Old Standard TT", serif;
+    font-size: .6em;
+    line-height: 4;
+    flex-shrink: 1;
   }
 
   #tweets-container article .tweet-content {
@@ -131,6 +180,8 @@ main.container {
     margin: 8px;
     height: 45%;
     position: relative;
+    font-size: .6em;
+    flex-shrink: 1;
   }
 
   #tweets-container article .break-word {
@@ -146,8 +197,9 @@ main.container {
   #tweets-container article footer {
     padding: 4px 8px;
     border-top: 1px solid #40434E;
-    font-size: 12px;
-    height: 20;
+    font-size: .6em;
+    height: 35px;
+    flex-shrink: 1;
   }
 
   #tweets-container article .date {
@@ -168,6 +220,9 @@ main.container {
   width: 100%;
   z-index: 9999;
   padding: 0 20px;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
 }
 
   #nav-bar .header {
@@ -176,9 +231,10 @@ main.container {
     vertical-align: top;
     line-height: 80px;
     font-family: "Oswald", sans-serif;
-    font-size: 2em;
+    font-size: 1em;
     color: black;
     margin: 0;
+    flex-grow: 1;
  }
 
   #nav-bar .logo {
@@ -186,19 +242,23 @@ main.container {
     height: 60px;
     float: left;
     margin: 5px 10px;
+    flex-shrink: 1;
   }
 
 
   #nav-bar button {
     float: right;
-    height: 40px;
-    width: 100px;
     margin: 16px;
     background-color: #CAD178;
     border: 1px solid #40434E;
     font-family: "Oswald", sans-serif;
     font-weight: 200;
+    font-size: .4em;
     padding: 4px;
+    align-self: flex-end;
+    height: 40px;
+    width: 100px;
+    flex-shrink: 1;
 }
 
 #nav-bar button:hover {
