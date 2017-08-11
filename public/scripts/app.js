@@ -70,7 +70,7 @@ $(function() {
 //LOAD DEM TWEETS
   const loadTweets = () => {
     $.ajax({
-            url:'http://localhost:8080/tweets',
+            url:'/tweets',
             method: 'GET'
            }).then(function (response) {
               renderTweets(response);
@@ -95,7 +95,7 @@ $(function() {
   //VALIDATING TWEET LENGTH
     let data = $(this).serialize();
         $.ajax({
-          url: 'http://localhost:8080/tweets',
+          url: '/tweets',
           method: 'POST',
           data: data
         }).then(function() {
