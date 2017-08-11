@@ -100,7 +100,12 @@ main.container {
 
   #tweets-container article:hover {
     opacity: 1;
-    box-shadow: 5px 5px #40434E;
+     box-shadow:
+                1px 1px #40434E,
+                2px 2px #40434E,
+                3px 3px #40434E;
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
   }
 
   #tweets-container article:hover a {
@@ -239,12 +244,20 @@ main.container {
  }
 
   #nav-bar .logo {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     float: left;
     margin: 5px 10px;
     flex-shrink: 1;
+    align-self: center;
   }
+
+  .logo:hover {
+     -webkit-transform: rotateZ(-30deg);
+        -ms-transform: rotateZ(-30deg);
+        transform: rotateZ(-30deg);
+}
+
 
 
   #nav-bar button {
